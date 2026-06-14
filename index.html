@@ -22,19 +22,19 @@
     }
     .layout {
       display: flex;
-      gap: 2.2rem;
+      gap: 2.4rem;
       align-items: flex-start;
-      max-width: 820px;
-      margin: 0 auto 0 2rem;   /* left-aligned; raise 2rem to pull it in */
+      max-width: 860px;
+      margin: 0 auto;          /* centered on the page */
     }
     .photo {
-      width: 180px;
-      height: 200px;
+      width: 210px;            /* slightly larger (was 180) */
+      height: 234px;           /* keeps the same proportions */
       flex-shrink: 0;
       object-fit: cover;
       background: #e8e8e8;
       display: block;
-      border-radius: 0;        /* square, not circular */
+      border-radius: 0;        /* square */
     }
     .content { flex: 1; min-width: 0; }
     h1 {
@@ -58,7 +58,7 @@
     }
     .paper { margin-bottom: 1rem; }
     .venue { font-weight: bold; }
-    /* PHONE — single centered column, photo just above text */
+    /* PHONE — unchanged: single centered column, photo above text */
     @media (max-width: 600px) {
       .layout { flex-direction: column; gap: 1.4rem; margin: 0 auto; }
       .photo { width: 150px; height: 170px; margin: 0 auto; }
