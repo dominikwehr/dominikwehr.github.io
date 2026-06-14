@@ -8,10 +8,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --ink:   #222;
-      --muted: #666;
+      --muted: #888;
       --rule:  #ccc;
       --link:  #1763a6;
-      --max:   620px;
     }
     body {
       font-family: Georgia, 'Times New Roman', serif;
@@ -19,27 +18,51 @@
       line-height: 1.6;
       color: var(--ink);
       background: #fff;
-      padding: 3rem 1.5rem 5rem;
+      padding: 3.5rem 1.5rem 5rem;
     }
-    .page { max-width: var(--max); margin: 0 auto; }
-    h1 {
-      font-size: 2rem;
-      font-weight: normal;
-      margin-bottom: 1.2rem;
+
+    .layout {
+      display: flex;
+      gap: 3.5rem;
+      align-items: flex-start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* LEFT COLUMN — name, photo, position, all centered */
+    .sidebar {
+      flex: 0 0 320px;
+      text-align: center;
+    }
+    .sidebar h1 {
+      font-size: 1.9rem;
+      font-weight: bold;
       letter-spacing: 0.01em;
+      margin-bottom: 1.4rem;
+      line-height: 1.2;
     }
     .photo {
-      width: 190px;
-      height: 210px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
       object-fit: cover;
       background: #e8e8e8;
       display: block;
-      margin-bottom: 1.2rem;
+      margin: 0 auto 1.2rem;
     }
-    .position { margin-bottom: 1.4rem; }
-    p { margin-bottom: 1rem; }
+    .position {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* RIGHT COLUMN — bio + sections */
+    .content { flex: 1; min-width: 0; }
+    .content p { margin-bottom: 1rem; }
+
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
     hr {
       border: none;
       border-top: 1px solid var(--rule);
@@ -47,33 +70,51 @@
     }
     h2 {
       font-size: 1.3rem;
-      font-weight: normal;
+      font-weight: bold;
       margin: 2rem 0 1rem;
     }
     .paper { margin-bottom: 1rem; }
     .venue { font-weight: bold; }
-    /* On phone: center the portrait above the text */
-    @media (max-width: 540px) {
-      .photo { margin-left: auto; margin-right: auto; }
+
+    /* PHONE — single centered column, photo just above text */
+    @media (max-width: 680px) {
+      .layout { flex-direction: column; gap: 1.8rem; }
+      .sidebar { flex: none; }
+      .content { text-align: center; }
+      .content h2 { text-align: center; }
     }
   </style>
 </head>
 <body>
-<div class="page">
-  <h1>Dominik Wehr</h1>
-  <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
-  <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
-  <p>I am interested in labor economics.</p>
-  <p>You can contact me at <a href="mailto:dominik.wehr@phdstudent.hhs.se">dominik.wehr@phdstudent.hhs.se</a>.</p>
-  <hr />
-  <h2>Working Papers</h2>
-  <p class="paper">
-    "The Economic Burden of Burnout,"<br />
-    with Arash Nekoei and J&oacute;sef Sigurdsson.<br />
-    <em>Revise and resubmit,</em> <span class="venue">American Economic Review</span>.
-  </p>
-  <h2>Works in Progress</h2>
-  <p class="paper">To be added.</p>
-</div>
+  <div class="layout">
+
+    <div class="sidebar">
+      <h1>Dominik Wehr</h1>
+      <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
+      <p class="position">
+        PhD Student in Economics /<br />
+        Stockholm School of Economics
+      </p>
+    </div>
+
+    <div class="content">
+      <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
+      <p>I am interested in labor economics.</p>
+      <p>You can contact me at <a href="mailto:dominik.wehr@phdstudent.hhs.se">dominik.wehr@phdstudent.hhs.se</a>.</p>
+
+      <hr />
+
+      <h2>Working Papers</h2>
+      <p class="paper">
+        "The Economic Burden of Burnout,"<br />
+        with Arash Nekoei and J&oacute;sef Sigurdsson.<br />
+        <em>Revise and resubmit,</em> <span class="venue">American Economic Review</span>.
+      </p>
+
+      <h2>Works in Progress</h2>
+      <p class="paper">To be added.</p>
+    </div>
+
+  </div>
 </body>
 </html>
