@@ -12,7 +12,6 @@
       --muted: #666;
       --rule:  #ccc;
       --link:  #1763a6;
-      --max:   680px;
     }
 
     body {
@@ -24,19 +23,17 @@
       padding: 3rem 1.5rem 5rem;
     }
 
-    .page { max-width: var(--max); margin: 0 auto; }
-
-    /* Two-column header: photo left, text right */
-    .header {
+    .layout {
       display: flex;
-      gap: 1.8rem;
+      gap: 2.2rem;
       align-items: flex-start;
-      margin-bottom: 1.4rem;
+      max-width: 820px;
+      margin: 0 auto;
     }
 
     .photo {
-      width: 170px;
-      height: 190px;
+      width: 180px;
+      height: 200px;
       flex-shrink: 0;
       object-fit: cover;
       background: #e8e8e8;
@@ -47,17 +44,16 @@
       font-size: 0.85rem;
     }
 
-    .header-text h1 {
+    .content { flex: 1; min-width: 0; }
+
+    h1 {
       font-size: 2rem;
       font-weight: normal;
       margin-bottom: 0.8rem;
       letter-spacing: 0.01em;
     }
 
-    .position {
-      color: var(--ink);
-      margin-bottom: 0;
-    }
+    .position { margin-bottom: 1.4rem; }
 
     p { margin-bottom: 1rem; }
 
@@ -77,51 +73,53 @@
     }
 
     .paper { margin-bottom: 1rem; }
+    .venue { font-weight: bold; }
 
-    @media (max-width: 540px) {
-      .header { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 600px) {
+      .layout { flex-direction: column; gap: 1.4rem; }
       .photo { width: 150px; height: 170px; }
     }
   </style>
 </head>
 <body>
-<div class="page">
 
-  <div class="header">
-   <img class="photo" src="photo.jpg" alt="Dominik Wehr" />
-    <div class="header-text">
+  <div class="layout">
+
+    <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
+
+    <div class="content">
+
       <h1>Dominik Wehr</h1>
       <p class="position">
         PhD Student in Economics /<br />
         Stockholm School of Economics.
       </p>
+
+      <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
+
+      <p>My research is in the field of labor economics. I study the causes and consequences of economic inequality.</p>
+
+      <p>My full CV is available <a href="#">here</a>. You can contact me at <a href="mailto:dominikr.wehr@gmail.com">dominikr.wehr@gmail.com</a>.</p>
+
+      <hr />
+
+      <h2>Working Papers</h2>
+
+      <p class="paper">
+        "The Economic Burden of Burnout,"<br />
+        with Arash Nekoei and J&oacute;sef Sigurdsson.<br />
+        <em>Revise and resubmit,</em> <span class="venue">American Economic Review</span>.
+      </p>
+
+      <h2>Works in Progress</h2>
+
+      <p class="paper">"Project Title One," with Co-Author Name.</p>
+
+      <p class="paper">"Project Title Two."</p>
+
     </div>
+
   </div>
 
-  <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
-
-  <p>My research is in the field of labor economics. I study the causes and consequences of economic inequality.</p>
-
-  <p>My full CV is available <a href="#">here</a>. You can contact me at <a href="mailto:dominikr.wehr@gmail.com">dominikr.wehr@gmail.com</a>.</p>
-
-  <hr />
-
-  <h2>Working Papers</h2>
-
-  <p class="paper">"Paper Title One." <a href="#">Paper</a>. Month Year.</p>
-
-  <p class="paper">"Paper Title Two," with Co-Author Name. <a href="#">Paper</a>, <a href="#">SSRN Link</a>. Month Year.</p>
-
-  <h2>Works in Progress</h2>
-
-  <p class="paper">"Project Title One," with Co-Author Name.</p>
-
-  <p class="paper">"Project Title Two."</p>
-
-  <h2>Publications</h2>
-
-  <p class="paper">"Published Paper Title," with Co-Author Name. <em>Journal Name</em>, Year, Vol(Issue): pages. <a href="#">Publisher's Link</a>, <a href="#">Paper</a>.</p>
-
-</div>
 </body>
 </html>
