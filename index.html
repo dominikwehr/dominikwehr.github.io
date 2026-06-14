@@ -8,7 +8,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --ink:   #222;
-      --muted: #888;
+      --muted: #666;
       --rule:  #ccc;
       --link:  #1763a6;
     }
@@ -18,51 +18,34 @@
       line-height: 1.6;
       color: var(--ink);
       background: #fff;
-      padding: 3.5rem 1.5rem 5rem;
+      padding: 3rem 1.5rem 5rem;
     }
-
     .layout {
       display: flex;
-      gap: 3.5rem;
+      gap: 2.2rem;
       align-items: flex-start;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* LEFT COLUMN — name, photo, position, all centered */
-    .sidebar {
-      flex: 0 0 320px;
-      text-align: center;
-    }
-    .sidebar h1 {
-      font-size: 1.9rem;
-      font-weight: bold;
-      letter-spacing: 0.01em;
-      margin-bottom: 1.4rem;
-      line-height: 1.2;
+      max-width: 820px;
+      margin: 0 auto 0 2rem;   /* left-aligned; raise 2rem to pull it in */
     }
     .photo {
-      width: 200px;
+      width: 180px;
       height: 200px;
-      border-radius: 50%;
+      flex-shrink: 0;
       object-fit: cover;
       background: #e8e8e8;
       display: block;
-      margin: 0 auto 1.2rem;
+      border-radius: 0;        /* square, not circular */
     }
-    .position {
-      font-size: 0.95rem;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* RIGHT COLUMN — bio + sections */
     .content { flex: 1; min-width: 0; }
-    .content p { margin-bottom: 1rem; }
-
+    h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.01em;
+    }
+    p { margin-bottom: 1rem; }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
     hr {
       border: none;
       border-top: 1px solid var(--rule);
@@ -70,16 +53,15 @@
     }
     h2 {
       font-size: 1.3rem;
-      font-weight: bold;
+      font-weight: normal;
       margin: 2rem 0 1rem;
     }
     .paper { margin-bottom: 1rem; }
     .venue { font-weight: bold; }
-
     /* PHONE — single centered column, photo just above text */
-    @media (max-width: 680px) {
-      .layout { flex-direction: column; gap: 1.8rem; }
-      .sidebar { flex: none; }
+    @media (max-width: 600px) {
+      .layout { flex-direction: column; gap: 1.4rem; margin: 0 auto; }
+      .photo { width: 150px; height: 170px; margin: 0 auto; }
       .content { text-align: center; }
       .content h2 { text-align: center; }
     }
@@ -87,34 +69,22 @@
 </head>
 <body>
   <div class="layout">
-
-    <div class="sidebar">
-      <h1>Dominik Wehr</h1>
-      <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
-      <p class="position">
-        PhD Student in Economics /<br />
-        Stockholm School of Economics
-      </p>
-    </div>
-
+    <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
     <div class="content">
+      <h1>Dominik Wehr</h1>
       <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
       <p>I am interested in labor economics.</p>
       <p>You can contact me at <a href="mailto:dominik.wehr@phdstudent.hhs.se">dominik.wehr@phdstudent.hhs.se</a>.</p>
-
       <hr />
-
       <h2>Working Papers</h2>
       <p class="paper">
         "The Economic Burden of Burnout,"<br />
         with Arash Nekoei and J&oacute;sef Sigurdsson.<br />
         <em>Revise and resubmit,</em> <span class="venue">American Economic Review</span>.
       </p>
-
       <h2>Works in Progress</h2>
       <p class="paper">To be added.</p>
     </div>
-
   </div>
 </body>
 </html>
