@@ -3,231 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dominik Wehr | PhD Student, Stockholm School of Economics</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <title>Dominik Wehr</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink:     #1a1a1a;
-      --muted:   #555;
-      --rule:    #ddd;
-      --accent:  #1a3a5c;
-      --bg:      #ffffff;
-      --max:     680px;
+      --ink:   #222;
+      --muted: #666;
+      --rule:  #ccc;
+      --link:  #1763a6;
+      --max:   680px;
     }
 
     body {
-      font-family: 'EB Garamond', Georgia, serif;
-      font-size: 1.125rem;
-      line-height: 1.7;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.6;
       color: var(--ink);
-      background: var(--bg);
-      padding: 3.5rem 1.5rem 6rem;
+      background: #fff;
+      padding: 3rem 1.5rem 5rem;
     }
 
-    .page {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
+    .page { max-width: var(--max); margin: 0 auto; }
 
-    /* ── Header ── */
+    /* Two-column header: photo left, text right */
     .header {
       display: flex;
+      gap: 1.8rem;
       align-items: flex-start;
-      gap: 2.2rem;
-      margin-bottom: 2.4rem;
+      margin-bottom: 1.4rem;
     }
 
     .photo {
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 170px;
+      height: 190px;
       flex-shrink: 0;
-      background: #e0e6ed;
+      object-fit: cover;
+      background: #e8e8e8;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      color: #888;
-      letter-spacing: 0.04em;
+      color: #999;
+      font-size: 0.85rem;
     }
 
     .header-text h1 {
-      font-size: 1.75rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      margin-bottom: 0.25rem;
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.01em;
     }
 
-    .header-text .position {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 0.55rem;
-    }
-
-    .header-text .tagline {
-      font-style: italic;
-      color: var(--accent);
-      font-size: 1.05rem;
-    }
-
-    /* ── Bio ── */
-    .bio {
-      margin-bottom: 2rem;
+    .position {
       color: var(--ink);
+      margin-bottom: 0;
     }
 
-    .bio p + p { margin-top: 0.85rem; }
+    p { margin-bottom: 1rem; }
 
-    .bio a, .section a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid #b0c4d8;
-      transition: border-color 0.15s;
-    }
-    .bio a:hover, .section a:hover { border-color: var(--accent); }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* ── Divider ── */
     hr {
       border: none;
       border-top: 1px solid var(--rule);
       margin: 2rem 0;
     }
 
-    /* ── Sections ── */
-    .section { margin-bottom: 2.4rem; }
-
-    .section h2 {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.1rem;
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin: 2rem 0 1rem;
     }
 
-    .paper {
-      margin-bottom: 1.1rem;
-    }
+    .paper { margin-bottom: 1rem; }
 
-    .paper .title {
-      font-style: italic;
-    }
-
-    .paper .meta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
-    }
-
-    .paper .links {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.82rem;
-      margin-top: 0.15rem;
-    }
-
-    .paper .links a {
-      margin-right: 0.8rem;
-    }
-
-    /* ── Footer ── */
-    .footer {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      color: #aaa;
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 500px) {
-      .header { flex-direction: column; align-items: center; text-align: center; }
-      .header-text .position { margin-top: 0.3rem; }
+    @media (max-width: 540px) {
+      .header { flex-direction: column; align-items: flex-start; }
+      .photo { width: 150px; height: 170px; }
     }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- Header -->
   <div class="header">
     <div class="photo">photo</div>
     <div class="header-text">
       <h1>Dominik Wehr</h1>
-      <p class="position">PhD Student &middot; Stockholm School of Economics</p>
+      <p class="position">
+        PhD Student in Economics /<br />
+        Stockholm School of Economics.
+      </p>
     </div>
   </div>
 
-  <!-- Bio -->
-  <div class="bio">
-    <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>. My research focuses on the causes and consequences of economic inequality.</p>
-    <p>You can reach me at <a href="mailto:dominikr.wehr@gmail.com">dominikr.wehr@gmail.com</a>. My CV is available <a href="#">here</a>.</p>
-  </div>
+  <p>I am a PhD student in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>.</p>
+
+  <p>My research is in the field of labor economics. I study the causes and consequences of economic inequality.</p>
+
+  <p>My full CV is available <a href="#">here</a>. You can contact me at <a href="mailto:dominikr.wehr@gmail.com">dominikr.wehr@gmail.com</a>.</p>
 
   <hr />
 
-  <!-- Working Papers -->
-  <div class="section">
-    <h2>Working Papers</h2>
+  <h2>Working Papers</h2>
 
-    <div class="paper">
-      <span class="title">"Paper Title One."</span>
-      <div class="meta">Month Year.</div>
-      <div class="links">
-        <a href="#">Paper</a>
-        <a href="#">SSRN</a>
-      </div>
-    </div>
+  <p class="paper">"Paper Title One." <a href="#">Paper</a>. Month Year.</p>
 
-    <div class="paper">
-      <span class="title">"Paper Title Two,"</span> with Co-Author Name.
-      <div class="meta">Month Year.</div>
-      <div class="links">
-        <a href="#">Paper</a>
-      </div>
-    </div>
+  <p class="paper">"Paper Title Two," with Co-Author Name. <a href="#">Paper</a>, <a href="#">SSRN Link</a>. Month Year.</p>
 
-  </div>
+  <h2>Works in Progress</h2>
 
-  <!-- Works in Progress -->
-  <div class="section">
-    <h2>Work in Progress</h2>
+  <p class="paper">"Project Title One," with Co-Author Name.</p>
 
-    <div class="paper">
-      <span class="title">"Project Title One,"</span> with Co-Author Name.
-    </div>
+  <p class="paper">"Project Title Two."</p>
 
-    <div class="paper">
-      <span class="title">"Project Title Two."</span>
-    </div>
+  <h2>Publications</h2>
 
-  </div>
-
-  <!-- Publications -->
-  <div class="section">
-    <h2>Publications</h2>
-
-    <div class="paper">
-      <span class="title">"Published Paper Title."</span>
-      <div class="meta"><em>Journal Name</em>, Year, Vol(Issue): pages.</div>
-      <div class="links">
-        <a href="#">Publisher's Link</a>
-        <a href="#">Paper</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer">Last updated June 2026.</div>
+  <p class="paper">"Published Paper Title," with Co-Author Name. <em>Journal Name</em>, Year, Vol(Issue): pages. <a href="#">Publisher's Link</a>, <a href="#">Paper</a>.</p>
 
 </div>
 </body>
