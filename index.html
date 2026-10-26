@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --ink:   #1f1f1f;
-      --muted: #666;
-      --rule:  #e2e2e2;
-      --link:  #5a6b80;   /* muted grey-blue */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
+
+    :root {
+      --ink: #1f1f1f;
+      --muted: #666;
+      --rule: #e2e2e2;
+      --link: #5a6b80;
+    }
+
     body {
       font-family: 'EB Garamond', Georgia, serif;
       font-size: 19px;
@@ -24,18 +32,22 @@
       padding: 3.5rem 1.5rem 5rem;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* MAIN LAYOUT */
     .layout {
       display: flex;
-      gap: 4rem;                 /* more space between photo and text */
+      gap: 4rem;
       align-items: flex-start;
       max-width: 920px;
       margin: 0 auto;
     }
-    /* LEFT COLUMN — name above the portrait, both centered */
+
+    /* LEFT COLUMN */
     .sidebar {
       flex: 0 0 auto;
       text-align: center;
     }
+
     .sidebar h1 {
       font-size: 1.85rem;
       font-weight: 500;
@@ -43,6 +55,7 @@
       margin-bottom: 1rem;
       letter-spacing: 0.01em;
     }
+
     .photo {
       width: 210px;
       height: 234px;
@@ -51,54 +64,130 @@
       display: block;
       border-radius: 2px;
     }
-    /* RIGHT COLUMN — bio + sections */
+
+    /* RIGHT COLUMN */
     .content {
       flex: 1;
       min-width: 0;
       max-width: 34rem;
     }
-    p { margin-bottom: 1.05rem; }
+
+    p {
+      margin-bottom: 1.05rem;
+    }
+
     a {
       color: var(--link);
       text-decoration: none;
       border-bottom: 1px solid rgba(90, 107, 128, 0.3);
     }
-    a:hover { border-bottom-color: var(--link); }
+
+    a:hover {
+      border-bottom-color: var(--link);
+    }
+
     hr {
       border: none;
       border-top: 1px solid var(--rule);
       margin: 2.4rem 0;
     }
+
     h2 {
       font-size: 1.4rem;
       font-weight: 500;
       margin: 2.2rem 0 1rem;
       letter-spacing: 0.01em;
     }
-    .paper { margin-bottom: 1.05rem; }
-    .venue { font-weight: 500; }
-    /* PHONE — single centered column, name + photo on top */
+
+    /* WORKING PAPERS */
+    .paper {
+      margin-bottom: 1.05rem;
+    }
+
+    .venue {
+      font-weight: 500;
+    }
+
+    /* EXPANDABLE ABSTRACTS */
+    details {
+      margin-top: -0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    summary {
+      color: var(--link);
+      cursor: pointer;
+      font-size: 0.95em;
+    }
+
+    details p {
+      margin-top: 0.7rem;
+      margin-bottom: 1rem;
+    }
+
+    /* MOBILE LAYOUT */
     @media (max-width: 640px) {
-      .layout { flex-direction: column; gap: 1.6rem; align-items: center; }
-      .photo { width: 150px; height: 167px; margin: 0 auto; }
-      .content { text-align: center; max-width: 100%; }
-      .content h2 { text-align: center; }
+      .layout {
+        flex-direction: column;
+        gap: 1.6rem;
+        align-items: center;
+      }
+
+      .photo {
+        width: 150px;
+        height: 167px;
+        margin: 0 auto;
+      }
+
+      .content {
+        text-align: center;
+        max-width: 100%;
+      }
+
+      .content h2 {
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="layout">
 
+    <!-- LEFT COLUMN: NAME AND PORTRAIT -->
     <div class="sidebar">
       <h1>Dominik Wehr</h1>
-      <img class="photo" src="portrait.jpg" alt="Dominik Wehr" />
+      <img
+        class="photo"
+        src="portrait.jpg"
+        alt="Dominik Wehr"
+      />
     </div>
 
+    <!-- RIGHT COLUMN: CONTENT -->
     <div class="content">
-      <p>I am a PhD candidate in Economics at the <a href="https://www.hhs.se">Stockholm School of Economics</a>. I am on the academic job market in 2026–27</p>
-      <p>My research focuses on labor economics. My work combines large-scale administrative and survey data
-        with structural methods and machine-learning to understand labor market competition and worker welfare. </p>
-      <p>You can contact me at <a href="mailto:dominik.wehr@phdstudent.hhs.se">dominik.wehr@phdstudent.hhs.se</a>.</p>
+
+      <!-- BIOGRAPHY -->
+      <p>
+        I am a PhD candidate in Economics at the
+        <a href="https://www.hhs.se">Stockholm School of Economics</a>.
+        I am on the academic job market in 2026–27.
+      </p>
+
+      <p>
+        My research focuses on labor economics.
+        My work combines large-scale administrative and survey data
+        with structural methods and machine learning to understand
+        labor market competition and worker welfare.
+      </p>
+
+      <p>
+        You can contact me at
+        <a href="mailto:dominik.wehr@phdstudent.hhs.se">
+          dominik.wehr@phdstudent.hhs.se
+        </a>.
+      </p>
+
       <hr />
 
       <!-- WORKING PAPERS -->
@@ -137,6 +226,7 @@
       </p>
 
     </div>
+
   </div>
 </body>
 </html>
